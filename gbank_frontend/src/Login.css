@@ -1,0 +1,49 @@
+.container {
+    display: 'flex';
+    height: '100%';
+    width: '100%';
+    align-items: 'center';
+    justify-content: 'center';
+    background: '#f0f2f5';
+}
+
+
+.card {
+    padding: '2rem';
+    border-radius: '10px';
+    box-shadow: '0 0 10px rgba(0,0,0,0.1)';
+    text-align: 'center';
+    width: fit-content;
+    border-color: rgba(53, 168, 83, 0.5);
+    border-width: thick;
+}
+
+
+.logoutButton {
+    margin-top: '1rem';
+    padding: '0.5rem 1rem';
+    border-radius: '5px';
+    border: 'none';
+    background: '#db4437';
+    color: 'white';
+    cursor: 'pointer';
+}
+
+.name {
+    font-size: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+}
+
+.slogan {
+    margin-bottom: 16px;
+    margin-top: 5px;
+}
+
+img {
+    width: 300px;
+}
+
+p {
+    text-align: center;
+}

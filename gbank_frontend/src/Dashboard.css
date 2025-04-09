@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(66, 133, 244, 0.75);
+    padding: 10px 20px;
+    color: white;
+}
+
+.header img {
+    height: 50px;
+    width: 50px;
+    /* Adjust image size */
+}
+
+.header h1 {
+    margin-left: 15px;
+    font-size: 24px;
+}
+
+.userName {
+    font-weight: bold;
+}
+
+.logoutButton {
+    padding-left: '5rem';
+    border-radius: '5px';
+    border: 'none';
+    background: #db4437;
+    color: 'white';
+    cursor: 'pointer', ;
+}
