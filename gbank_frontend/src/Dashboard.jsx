@@ -11,6 +11,7 @@ const Dashboard = () => {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const handleLogout = () => {
+        localStorage.removeItem('token');
         dispatch(logout());
     }
 
@@ -34,7 +35,7 @@ const Dashboard = () => {
                 </div >
                 <div style={{ width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'end', alignItems: 'center', height: '50px' }}>
                     <button onClick={handleLogout} className="logoutButton">Logout</button>
-                    <img src={user.image} alt="Logo" referrerPolicy="no-referrer" />
+                    <img src={user.image} className="roundImage" alt="Logo" referrerPolicy="no-referrer" />
                 </div>
 
 

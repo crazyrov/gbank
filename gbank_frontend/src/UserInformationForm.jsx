@@ -8,7 +8,8 @@ const UserInformationForm = () => {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-    const url = "http://localhost:5000";
+    const url = "https://gbank-backend-15016664665.asia-south1.run.app";
+    // const url = "http://127.0.0.1:8080";
     const handleFormsubmit = (data) => {
         data.preventDefault();
         const account_number = Math.floor(Math.random() * (999999999999 - 100000000000 + 1)) + 100000000000;
@@ -27,17 +28,26 @@ const UserInformationForm = () => {
             body: JSON.stringify(body)
         }).then((data) => {
             if (!data.ok) {
-                console.log("Updating user failed : ", data);
                 dispatch(login({
-                    name: user.name, email: user.email, token: '', image: user.image, existing_user: false
+                    name: user.name,
+                    email: user.email,
+                    token: '', image:
+                        user.image, existing_user: false
                 }));
             } else {
                 dispatch(login({
-                    name: user.name, email: user.email, token: '', image: user.image, existing_user: true
+                    name: user.name,
+                    email: user.email,
+                    token: '',
+                    image: user.image,
+                    existing_user: true,
+                    account_number: account_number,
+                    balance: balance,
+                    phone: body.phone,
+                    address: body.address
                 }));
             }
         });
-        console.log('Form data :', data);
 
     }
     return (

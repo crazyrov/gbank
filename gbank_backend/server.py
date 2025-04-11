@@ -6,7 +6,9 @@ import db_helper
 
 app = Flask(__name__)
 allowed_origins = [
-    "http://localhost:4173"
+    "http://localhost:4173",
+    "https://gbank-frontend-15016664665.us-central1.run.app",
+    "http://localhost:3000"
 ]
 
 CORS(app,origins=allowed_origins)
@@ -19,7 +21,9 @@ def hello():
 @app.route('/check_user')
 def check_user():
     # Check if the user is in the database
-    return db_helper.check_user(request.args.get("user"))
+    print(request.headers)
+    print("Here is the token : ", request.headers.get("Authorization"))
+    return db_helper.check_user(request.args.get("user"), request.headers.get("Authorization"))
     # return False
 
 
@@ -36,4 +40,4 @@ def get_user_info():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(port=8080, host="0.0.0.0")
